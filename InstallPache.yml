@@ -1,6 +1,13 @@
 ---
-- hosts: apache
-  sudo: yes
-  tasks:
-    - name: install apache2
-      apt: name=apache2 update_cache=yes state=latest
+provider:
+- aws:
+  - access_key: ""
+    secret_key: ""
+    profile: default
+    region: us-east-1
+    
+resource:
+- aws_instance:
+  - example:
+    - ami: ami-0b898040803850657
+      instance_type: t2.micro
