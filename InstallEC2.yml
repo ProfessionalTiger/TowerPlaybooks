@@ -1,5 +1,5 @@
 ---
-- name: Launching ec2
+  - name: Launching ec2
     hosts: localhost
     tasks:
       - name: Laucning EC2 Instance
