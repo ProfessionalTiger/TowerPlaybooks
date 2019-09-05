@@ -1,4 +1,7 @@
 ---
+- src: https://github.com/pemcg/ansible-role-listvars
+  version: master
+  name: ansible-role
 - name: Test
   hosts: all
   gather_facts: false
