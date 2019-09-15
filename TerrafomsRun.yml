@@ -1,14 +1,10 @@
 ---
-  - name: Launching ec2
-    hosts: localhost
-    tasks:
-      - name: Laucning EC2 Instance
-        ec2:
-          key_name: Aamir
-          region: us-east-1
-          instance_type: t2.micro
-          image: ami-0b898040803850657
-          group: default
-          vpc_subnet_id: subnet-12b59064
-          assign_public_ip: yes
-          count: 1
+- name: Test
+  hosts: all
+  gather_facts: false
+  become: true
+  connection: local
+  tasks:
+    - import_role:
+       name: terraform
+
