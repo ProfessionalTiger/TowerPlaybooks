@@ -1,0 +1,3 @@
+- src: https://github.com/pemcg/ansible-role-listvars
+  version: master
+  name: ansible-role-listvars
