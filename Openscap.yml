@@ -1,0 +1,15 @@
+---
+ - hosts:
+  - all
+  gather_facts: false
+  pre_tasks:
+  - name: Waiting for SSH to be available
+    wait_for_connection:
+      delay: 2
+      timeout: 300
+  # Debian-based systems usually require some prerequisite packages
+  - raw: 'if [ -n "$(command -v apt)" ] ; then sudo apt install -y python python-pip virtualenv aptitude; fi'
+  - setup: # aka gather_facts
+  become: true
+  roles:
+  - openscap
